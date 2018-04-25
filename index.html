@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stefan Djokic - Online Image Filter</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112027701-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-112027701-1');
+  </script>
+
+  <meta name="description" content="Stefan Djokic - Software developer, content manager, digital marketing specialist. Welcome to the official portfolio website!"
+  />
+
+  <link rel='shortcut icon' type='image/x-icon' href='https://res.cloudinary.com/sdee3-com/image/upload/c_scale,w_16/v1521407300/favicon_stgjeo.png'
+  />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="https://sdee3.com/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand m-0 p-0" href="https://sdee3.com/" style="text-transform: uppercase; color: #495057">
+      <strong>Stefan</strong>Đokić
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" />
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link mt-2 mr-4" href="https://sdee3.com#projects">
+            Projects
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://sdee3.com/blog" class="nav-link mt-2 mr-4">
+            Blog
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="https://sdee3.com/Stefan-Djokic-CV.pdf" target="_blank" rel="noopener noreferrer">
+            <button class="btn btn-outline-secondary" type="button">
+              Download Resume
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-8 m-auto">
+        <div class="custom-file mb-3">
+          <input type="file" class="custom-file-input" id="upload-file">
+          <label for="upload-file" class="custom-file-label">Choose Image</label>
+        </div>
+        <canvas id="canvas"></canvas>
+
+        <h4 class="text-center my-3">Filters</h4>
+
+        <div class="row my-4 text-center">
+          <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+              <button class="filter-btn brightness-remove btn btn-info">-</button>
+              <button class="btn btn-secondary btn-disabled" disabled>Brightness</button>
+              <button class="filter-btn brightness-add btn btn-info">+</button>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+              <button class="filter-btn contrast-remove btn btn-info">-</button>
+              <button class="btn btn-secondary btn-disabled" disabled>Contrast</button>
+              <button class="filter-btn contrast-add btn btn-info">+</button>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+              <button class="filter-btn saturation-remove btn btn-info">-</button>
+              <button class="btn btn-secondary btn-disabled" disabled>Saturation</button>
+              <button class="filter-btn saturation-add btn btn-info">+</button>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="btn-group btn-group-sm">
+              <button class="filter-btn vibrance-remove btn btn-info">-</button>
+              <button class="btn btn-secondary btn-disabled" disabled>Vibrance</button>
+              <button class="filter-btn vibrance-add btn btn-info">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- ./row -->
+
+        <h4 class="text-center my-3">Effects</h4>
+
+        <div class="row mb-3">
+          <div class="col-md-3">
+            <button class="filter-btn vintage-add btn btn-dark btn-block">
+              Vintage
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="filter-btn lomo-add btn btn-dark btn-block">
+              Lomo
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="filter-btn clarity-add btn btn-dark btn-block">
+              Clarity
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="filter-btn sincity-add btn btn-dark btn-block">
+              Sin City
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <button class="filter-btn crossprocess-add btn btn-dark btn-block">
+              Cross Process
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="filter-btn pinhole-add btn btn-dark btn-block">
+              Pinhole
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="filter-btn nostalgia-add btn btn-dark btn-block">
+              Nostalgia
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button class="filter-btn hermajesty-add btn btn-dark btn-block">
+              Her Majesty
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <button id="download-btn" class="btn btn-primary btn-block">Download Image</button>
+          </div>
+          <div class="col-md-6">
+            <button id="revert-btn" class="btn btn-danger btn-block">Remove Filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div id="footer-content">
+      <div id="contact-info">
+        <ul>
+          <li>
+            <i class="fas fa-map-marker fa-2x mr-3"></i>Belgrade, Serbia</li>
+          <li>
+            <i class="fas fa-at fa-2x mr-3"></i>
+            <a href="mailto:stefandjokic96@outlook.com">stefandjokic96@outlook.com</a>
+          </li>
+        </ul>
+      </div>
+      <div id="social">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/stefd96" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/StefD96" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/cly__cly/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/stefandjokic96/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/sdee3" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="links">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#blog-articles">Blog</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+  <script src="main.js"></script>
+  <script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script>
+  <script>
+    addBackToTop({
+      diameter: 56,
+      backgroundColor: 'rgb(255, 82, 82)',
+      textColor: '#fff'
+    })
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
